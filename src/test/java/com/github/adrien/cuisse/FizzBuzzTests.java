@@ -1,50 +1,40 @@
 package com.github.adrien.cuisse;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 final class FizzBuzzTests
 {
 	private final FizzBuzz fizzbuzz = new FizzBuzz();
 
-	@Test
-	void fizzbuzz_numberIs1_stringIs1()
+	static List<Arguments> anyNumber()
 	{
-		// given
-		int number = 1;
-
-		// when
-		String output = this.fizzbuzz.generate(number);
-
-		// then
-		assertThat(output, is("1"));
+		return List.of(
+			arguments(1, "1"),
+			arguments(2, "2"),
+			arguments(4, "4"));
 	}
 
-	@Test
-	void fizzbuzz_numberIs2_stringIs2()
+	@ParameterizedTest
+	@MethodSource("anyNumber")
+	@DisplayName("returns number-string for any number")
+	void fizzbuzz_anyNumber_numberInString(int number, String expectedOutput)
 	{
-		// given
-		int number = 2;
+		// given: any number
 
 		// when
 		String output = this.fizzbuzz.generate(number);
 
 		// then
-		assertThat(output, is("2"));
-	}
-
-	@Test
-	void fizzbuzz_numberIs4_stringIs4()
-	{
-		// given
-		int number = 4;
-
-		// when
-		String output = this.fizzbuzz.generate(number);
-
-		// then
-		assertThat(output, is("4"));
+		assertThat(output, is(expectedOutput));
 	}
 }
