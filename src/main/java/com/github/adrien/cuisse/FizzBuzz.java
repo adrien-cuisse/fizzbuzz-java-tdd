@@ -1,7 +1,7 @@
 package com.github.adrien.cuisse;
 
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.IntStream.range;
 
 public final class FizzBuzz
 {
@@ -18,8 +18,8 @@ public final class FizzBuzz
 
 	public String generate(int from, int to)
 	{
-		return IntStream.range(from, to + 1)
+		return range(from, to + 1)
 			.mapToObj(this::generate)
-			.collect(Collectors.joining(" "));
+			.collect(joining(" "));
 	}
 }
