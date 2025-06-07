@@ -41,7 +41,7 @@ final class FizzBuzzTests
 
 	static List<Integer> multipleOf3()
 	{
-		return List.of(3, 6);
+		return List.of(3, 6, 9);
 	}
 
 	@ParameterizedTest
