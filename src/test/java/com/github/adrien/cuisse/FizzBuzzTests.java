@@ -7,6 +7,8 @@ import static org.hamcrest.Matchers.*;
 
 final class FizzBuzzTests
 {
+	private final FizzBuzz fizzbuzz = new FizzBuzz();
+
 	@Test
 	void fizzbuzz_numberIs1_stringIs1()
 	{
@@ -14,7 +16,7 @@ final class FizzBuzzTests
 		int number = 1;
 
 		// when
-		String output = new FizzBuzz().generate(number);
+		String output = this.fizzbuzz.generate(number);
 
 		// then
 		assertThat(output, is("1"));
@@ -27,7 +29,7 @@ final class FizzBuzzTests
 		int number = 2;
 
 		// when
-		String output = new FizzBuzz().generate(number);
+		String output = this.fizzbuzz.generate(number);
 
 		// then
 		assertThat(output, is("2"));
