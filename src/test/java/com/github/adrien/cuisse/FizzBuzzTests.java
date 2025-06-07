@@ -79,7 +79,7 @@ final class FizzBuzzTests
 
 	static List<Integer> multipleOf15()
 	{
-		return List.of(15, 30);
+		return List.of(15, 30, 45);
 	}
 
 	@ParameterizedTest
