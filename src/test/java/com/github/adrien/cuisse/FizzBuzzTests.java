@@ -19,4 +19,17 @@ final class FizzBuzzTests
 		// then
 		assertThat(output, is("1"));
 	}
+
+	@Test
+	void fizzbuzz_numberIs2_stringIs2()
+	{
+		// given
+		int number = 2;
+
+		// when
+		String output = new FizzBuzz().generate(number);
+
+		// then
+		assertThat(output, is("2"));
+	}
 }
