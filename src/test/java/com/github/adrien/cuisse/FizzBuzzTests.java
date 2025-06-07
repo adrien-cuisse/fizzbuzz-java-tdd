@@ -57,4 +57,17 @@ final class FizzBuzzTests
 		// then
 		assertThat(output, is("Fizz"));
 	}
+
+	@Test
+	void fizzbuzz_numberIs5_stringIsBuzz()
+	{
+		// given
+		int number = 5;
+
+		// when
+		String output = this.fizzbuzz.generate(number);
+
+		// then
+		assertThat(output, is("Buzz"));
+	}
 }
