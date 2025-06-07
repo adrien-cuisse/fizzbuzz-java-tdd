@@ -47,7 +47,7 @@ final class FizzBuzzTests
 	@ParameterizedTest
 	@MethodSource("multipleOf3")
 	@DisplayName("returns Fizz for multiples of 3")
-	void fizzbuzz_numberIs3_stringIsFizz(int multipleOf3)
+	void fizzbuzz_multipleOf3_stringIsFizz(int multipleOf3)
 	{
 		// given: a multiple of 3
 
