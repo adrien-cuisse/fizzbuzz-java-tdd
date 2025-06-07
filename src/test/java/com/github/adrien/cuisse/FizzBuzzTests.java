@@ -39,27 +39,20 @@ final class FizzBuzzTests
 		assertThat(output, is(expectedOutput));
 	}
 
-	@Test
-	void fizzbuzz_numberIs3_stringIsFizz()
+	static List<Integer> multipleOf3()
 	{
-		// given
-		int number = 3;
-
-		// when
-		String output = this.fizzbuzz.generate(number);
-
-		// then
-		assertThat(output, is("Fizz"));
+		return List.of(3, 6);
 	}
 
-	@Test
-	void fizzbuzz_numberIs6_stringIsFizz()
+	@ParameterizedTest
+	@MethodSource("multipleOf3")
+	@DisplayName("returns Fizz for multiples of 3")
+	void fizzbuzz_numberIs3_stringIsFizz(int multipleOf3)
 	{
-		// given
-		int number = 6;
+		// given: a multiple of 3
 
 		// when
-		String output = this.fizzbuzz.generate(number);
+		String output = this.fizzbuzz.generate(multipleOf3);
 
 		// then
 		assertThat(output, is("Fizz"));
