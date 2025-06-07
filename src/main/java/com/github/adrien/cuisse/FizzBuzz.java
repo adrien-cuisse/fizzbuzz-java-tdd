@@ -4,11 +4,7 @@ public final class FizzBuzz
 {
 	public String generate(int number)
 	{
-		if (number == 5)
-			return "Buzz";
-		if (number == 10)
-			return "Buzz";
-		if (number == 20)
+		if (number % 5 == 0)
 			return "Buzz";
 		if (number % 3 == 0)
 			return "Fizz";
