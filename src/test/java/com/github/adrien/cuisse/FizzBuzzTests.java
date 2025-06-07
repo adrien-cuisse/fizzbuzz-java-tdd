@@ -34,4 +34,17 @@ final class FizzBuzzTests
 		// then
 		assertThat(output, is("2"));
 	}
+
+	@Test
+	void fizzbuzz_numberIs4_stringIs4()
+	{
+		// given
+		int number = 4;
+
+		// when
+		String output = this.fizzbuzz.generate(number);
+
+		// then
+		assertThat(output, is("4"));
+	}
 }
