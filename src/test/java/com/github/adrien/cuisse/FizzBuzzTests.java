@@ -21,7 +21,8 @@ final class FizzBuzzTests
 		return List.of(
 			arguments(1, "1"),
 			arguments(2, "2"),
-			arguments(4, "4"));
+			arguments(4, "4"),
+			arguments(437683738, "437683738"));
 	}
 
 	@ParameterizedTest
