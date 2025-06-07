@@ -95,4 +95,18 @@ final class FizzBuzzTests
 		// then
 		assertThat(output, is("FizzBuzz"));
 	}
+
+	@Test
+	void fizzbuzz_1to15_1_2_Fizz_4_Buzz_Fizz_7_8_Fizz_Buzz_11_Fizz_13_14_FizzBuzz()
+	{
+		// given: a range from 1 to 15 (included)
+		int from = 1;
+		int to = 15;
+
+		// when
+		String output = this.fizzbuzz.generate(from, to);
+
+		// then
+		assertThat(output, is("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz"));
+	}
 }
