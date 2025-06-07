@@ -77,27 +77,22 @@ final class FizzBuzzTests
 		assertThat(output, is("Buzz"));
 	}
 
-	@Test
-	void fizzbuzz_numberIs15_stringIsFizzBuzz()
+	static List<Integer> multipleOf15()
 	{
-		// given
-		int number = 15;
-
-		// when
-		String output = this.fizzbuzz.generate(number);
-
-		assertThat(output, is("FizzBuzz"));
+		return List.of(15, 30);
 	}
 
-	@Test
-	void fizzbuzz_numberIs30_stringIsFizzBuzz()
+	@ParameterizedTest
+	@MethodSource("multipleOf15")
+	@DisplayName("returns FizzBuzz for multiples of 15")
+	void fizzbuzz_multipleOf15_stringIsFizzBuzz(int multipleOf15)
 	{
-		// given
-		int number = 30;
+		// given: a multiple of 15
 
 		// when
-		String output = this.fizzbuzz.generate(number);
+		String output = this.fizzbuzz.generate(multipleOf15);
 
+		// then
 		assertThat(output, is("FizzBuzz"));
 	}
 }
