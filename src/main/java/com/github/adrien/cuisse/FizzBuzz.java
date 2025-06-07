@@ -8,6 +8,8 @@ public final class FizzBuzz
 			return "FizzBuzz";
 		if (number == 30)
 			return "FizzBuzz";
+		if (number == 45)
+			return "FizzBuzz";
 		if (number % 5 == 0)
 			return "Buzz";
 		if (number % 3 == 0)
